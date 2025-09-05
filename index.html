@@ -5,19 +5,115 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scale BI</title>
+
+  <style>
+    body {
+      margin-left: 220px;
+      transition: margin-left 0.2s;
+    }
+    #sidebarToggle:checked ~ .sidebar {
+      width: 60px;
+    }
+    #sidebarToggle:checked ~ .sidebar .sidebar-title {
+      opacity: 0;
+    }
+    #sidebarToggle:checked ~ .main-content {
+      margin-left: 60px;
+    }
+    #sidebarToggle:checked ~ nav {
+      margin-left: 60px;
+    }
+    .sidebar {
+      width: 220px;
+      min-height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: width 0.2s;
+      z-index: 1040;
+      overflow-x: hidden;
+      background: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+    }
+    .sidebar .sidebar-title {
+      transition: opacity 0.2s;
+      opacity: 1;
+      white-space: nowrap;
+    }
+    .sidebar ul {
+      margin-top: 60px;
+    }
+    /* Toggle button styling */
+    .sidebar-toggle-label {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1051;
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      display: flex;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      body, #sidebarToggle:checked ~ .main-content, #sidebarToggle:checked ~ nav {
+        margin-left: 0 !important;
+      }
+      .sidebar {
+        position: absolute;
+        min-height: 100%;
+        z-index: 1040;
+      }
+    }
+  </style>
+
 </head>
 
-<body>
+<body><!-- Hidden checkbox for CSS-only toggle -->
+  <input type="checkbox" id="sidebarToggle" class="d-none" />
+  <!-- Toggle button -->
+  <label for="sidebarToggle" class="sidebar-toggle-label" title="Toggle sidebar">
+    <i class="bi bi-list"></i>
+  </label>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul class="list-unstyled m-0 p-3">
+      <li class="mb-3">
+        <a href="#" class="d-flex align-items-center text-decoration-none text-dark">
+          <i class="bi bi-house-door me-2"></i>
+          <span class="sidebar-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="mb-3">
+        <a href="#" class="d-flex align-items-center text-decoration-none text-dark">
+          <i class="bi bi-graph-up me-2"></i>
+          <span class="sidebar-title">Analytics</span>
+        </a>
+      </li>
+      <li class="mb-3">
+        <a href="#" class="d-flex align-items-center text-decoration-none text-dark">
+          <i class="bi bi-people me-2"></i>
+          <span class="sidebar-title">Users</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="d-flex align-items-center text-decoration-none text-dark">
+          <i class="bi bi-gear me-2"></i>
+          <span class="sidebar-title">Settings</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+  <!-- Main content and navbar -->
   <nav class="navbar navbar-expand-md mb-4">
     <div class="container-fluid">
-
-      <button class="btn btn-outline-secondary btn-sm" id="toggleSidebar"><i class="bi bi-list"></i></button>
-
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img src="scalebi_logo.jpg" width="40" height="32" alt="ScaleBI logo">
         <span class="fs-4">ScaleBI</span>
       </a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span
           class="navbar-toggler-icon"></span> </button>
@@ -27,7 +123,6 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           </form>
         </div>
-
         <div class="dropdown ms-auto">
           <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
             <div class="avatar-wrapper me-2">
@@ -48,8 +143,6 @@
             <li><a class="dropdown-item" href="#">Sign out</a></li>
           </ul>
         </div>
-
-
         <div class="pos-f-t">
           <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
@@ -65,14 +158,12 @@
             </button>
           </nav>
         </div>
-
-
       </div>
-
-
-    </div>
     </div>
   </nav>
+  <div class="main-content">
+    <!-- Your main content goes here -->
+  </div>
   <script type="module" src="src/js/main.js"></script>
 </body>
 
