@@ -16,9 +16,6 @@ var myChart = echarts.init(document.getElementById('barChart'));
 
 // Draw the chart
 myChart.setOption({
-  title: {
-    text: 'ECharts Getting Started Example'
-  },
   tooltip: {},
   xAxis: {
     data: ['shirt', 'cardigan', 'chiffon', 'pants', 'heels', 'socks']
@@ -31,4 +28,20 @@ myChart.setOption({
       data: [5, 20, 36, 10, 10, 20]
     }
   ]
+});
+
+document.getElementById("darkModeBtn").addEventListener("click", (event) => {
+  const iconEl = event.currentTarget.firstChild;
+  console.log(iconEl);
+  
+  if(iconEl.classList.contains("bi-brightness-high")) {
+    iconEl.classList.remove("bi-brightness-high");
+    iconEl.classList.add("bi-moon");
+    
+  } else {
+    iconEl.classList.remove("bi-moon");
+    iconEl.classList.add("bi-brightness-high");
+    
+  }
+  
 });
