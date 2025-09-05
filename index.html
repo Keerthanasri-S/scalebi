@@ -61,17 +61,17 @@
           <form class="d-flex" role="search">
 
             <div class="input-group">
-            <span class="input-group-text" id="basic-addon1">
-              <i class="bi bi-magic"></i>
-            </span>
-            <input class="form-control" type="search" placeholder="Ask AI" aria-label="Search">
-          </div>
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-magic"></i>
+              </span>
+              <input class="form-control" type="search" placeholder="Ask AI" aria-label="Search">
+            </div>
 
-            
+
           </form>
         </div>
         <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
-<label class="btn" for="btn-check-outlined"><i class="bi bi-brightness-high"></i></label>
+        <label class="btn" for="btn-check-outlined"><i class="bi bi-brightness-high"></i></label>
         <div class="dropdown ms-auto">
           <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
             <div class="avatar-wrapper me-2">
@@ -111,65 +111,52 @@
     </div>
   </nav>
   <div class="main-content ms-5 px-4">
-        
-      <!-- KPIs -->
-      <div class="row g-4 mb-2">
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card card-kpi p-3">
-            <div class="text-secondary small">Total Registrations</div>
-            <div class="fs-3 fw-semibold">1,248</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card card-kpi p-3">
-            <div class="text-secondary small">Confirmed Attendees</div>
-            <div class="fs-3 fw-semibold">932</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card card-kpi p-3">
-            <div class="text-secondary small">Sessions</div>
-            <div class="fs-3 fw-semibold">36</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card card-kpi p-3">
-            <div class="text-secondary small">Satisfaction</div>
-            <div class="fs-3 fw-semibold">4.7/5</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Charts -->
-      <div class="row g-4">
-        <div class="col-lg-8">
-          <div class="card chart-card p-3">
-            <h5>Registrations Over Time</h5>
-            <div id="lineChart" class="echart"></div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card chart-card p-3">
-            <h5>Track Split</h5>
-            <div id="pieChart" class="echart" style="height:340px;"></div>
-          </div>
+    <!-- KPIs -->
+    <div class="row g-4 mb-2">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card card-kpi p-3">
+          <div class="text-secondary small">Databases</div>
+          <div class="fs-3 fw-semibold">5</div>
         </div>
       </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card card-kpi p-3">
+          <div class="text-secondary small">Confirmed Attendees</div>
+          <div class="fs-3 fw-semibold">932</div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card card-kpi p-3">
+          <div class="text-secondary small">Sessions</div>
+          <div class="fs-3 fw-semibold">36</div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card card-kpi p-3">
+          <div class="text-secondary small">Satisfaction</div>
+          <div class="fs-3 fw-semibold">4.7/5</div>
+        </div>
+      </div>
+    </div>
 
-      <div class="row g-4 mt-1 mb-5">
-        <div class="col-lg-6">
-          <div class="card chart-card p-3">
-            <h5>Daily Check-ins</h5>
-            <div id="barChart" class="echart"></div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="card chart-card p-3">
-            <h5>City-wise Participation</h5>
-            <div id="radarChart" class="echart"></div>
-          </div>
+    <!-- Charts -->
+    
+
+    <div class="row g-4 mt-1 mb-5">
+      <div class="col-lg-6">
+        <div class="card chart-card p-3">
+          <h5>Dashboards</h5>
+          <div id="barChart" style="width: 100%; height: 400px;"></div>
         </div>
       </div>
+      <div class="col-lg-6">
+        <div class="card chart-card p-3">
+          <h5>City-wise Participation</h5>
+          <div id="radarChart" class="echart"></div>
+        </div>
+      </div>
+    </div>
 
   </div>
   <script type="module" src="src/js/main.js"></script>
