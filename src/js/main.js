@@ -31,17 +31,9 @@ myChart.setOption({
 });
 
 document.getElementById("darkModeBtn").addEventListener("click", (event) => {
-  const iconEl = event.currentTarget.firstChild;
-  console.log(iconEl);
-  
-  if(iconEl.classList.contains("bi-brightness-high")) {
-    iconEl.classList.remove("bi-brightness-high");
-    iconEl.classList.add("bi-moon");
-    
+  if(event.currentTarget.innerHTML.includes("bi-brightness-high")) {
+    event.currentTarget.innerHTML = `<i class="bi bi-moon"></i>`;
   } else {
-    iconEl.classList.remove("bi-moon");
-    iconEl.classList.add("bi-brightness-high");
-    
+    event.currentTarget.innerHTML = `<i class="bi bi-brightness-high"></i>`;
   }
-  
 });
