@@ -16,7 +16,7 @@
   </label>
   <!-- Sidebar -->
   <aside class="sidebar">
-    <ul class="list-unstyled m-0 p-3">
+    <ul class="list-unstyled m-0 px-3">
       <li class="mb-3">
         <a href="#" class="d-flex align-items-center text-decoration-none text-dark">
           <i class="bi bi-house-door me-2"></i>
@@ -94,8 +94,67 @@
       </div>
     </div>
   </nav>
-  <div class="main-content">
-    <!-- Your main content goes here -->
+  <div class="main-content ms-5 px-4">
+        
+      <!-- KPIs -->
+      <div class="row g-4 mb-2">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card card-kpi p-3">
+            <div class="text-secondary small">Total Registrations</div>
+            <div class="fs-3 fw-semibold">1,248</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card card-kpi p-3">
+            <div class="text-secondary small">Confirmed Attendees</div>
+            <div class="fs-3 fw-semibold">932</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card card-kpi p-3">
+            <div class="text-secondary small">Sessions</div>
+            <div class="fs-3 fw-semibold">36</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card card-kpi p-3">
+            <div class="text-secondary small">Satisfaction</div>
+            <div class="fs-3 fw-semibold">4.7/5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="card chart-card p-3">
+            <h5>Registrations Over Time</h5>
+            <div id="lineChart" class="echart"></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card chart-card p-3">
+            <h5>Track Split</h5>
+            <div id="pieChart" class="echart" style="height:340px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-1 mb-5">
+        <div class="col-lg-6">
+          <div class="card chart-card p-3">
+            <h5>Daily Check-ins</h5>
+            <div id="barChart" class="echart"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card chart-card p-3">
+            <h5>City-wise Participation</h5>
+            <div id="radarChart" class="echart"></div>
+          </div>
+        </div>
+      </div>
+
   </div>
   <script type="module" src="src/js/main.js"></script>
 </body>

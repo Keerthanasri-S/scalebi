@@ -6,12 +6,13 @@
   opacity: 0;
 }
 #sidebarToggle:checked ~ .main-content {
-  margin-left: 60px;
+  @extend .ms-5;
 }
 #sidebarToggle:checked ~ nav {
-  margin-left: 60px;
+  @extend .ms-5;
 }
 .sidebar {
+  margin-top: 54px !important;
   width: 220px;
   min-height: 100vh;
   position: fixed;
@@ -28,14 +29,12 @@
   opacity: 1;
   white-space: nowrap;
 }
-.sidebar {
-  margin-top: 60px !important;
-}
+
 /* Toggle button styling */
 .sidebar-toggle-label {
   position: fixed;
   top: 1rem;
-  left: 1rem;
+  left: 0.5rem;
   z-index: 1051;
   background: #fff;
   border: 1px solid #dee2e6;
