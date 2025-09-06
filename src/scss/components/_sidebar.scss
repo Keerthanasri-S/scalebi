@@ -21,8 +21,7 @@
   transition: width 0.2s;
   z-index: 1040;
   overflow-x: hidden;
-  background: #f8f9fa;
-  border-right: 1px solid #dee2e6;
+  background: var(--bs-info);
 }
 .sidebar .sidebar-title {
   transition: opacity 0.2s;
