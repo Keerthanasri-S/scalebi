@@ -11,7 +11,7 @@ import { Tooltip, Toast, Popover } from 'bootstrap';
 
 import * as echarts from 'echarts';
 
-// Create the echarts instance
+// Dashboards
 var myChart = echarts.init(document.getElementById('barChart'));
 
 // Draw the chart
