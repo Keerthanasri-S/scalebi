@@ -18,22 +18,52 @@ var myChart = echarts.init(document.getElementById('barChart'));
 myChart.setOption({
   tooltip: {},
   xAxis: {
-    data: ['> 30 days', '> 7 days && <= 30 days ', '<= 7 days']
+    data: ['shirt', 'cardigan', 'chiffon', 'pants', 'heels', 'socks']
   },
   yAxis: {},
   series: [
     {
       name: 'sales',
       type: 'bar',
-      data: [5, 20, 36]
+      data: [5, 20, 36, 10, 10, 20]
     }
   ]
 });
 
-document.getElementById("darkModeBtn").addEventListener("click", (event) => {
-  if(event.currentTarget.innerHTML.includes("bi-brightness-high")) {
-    event.currentTarget.innerHTML = `<i class="bi bi-moon"></i>`;
+// ...existing code...
+
+// Set initial theme and icon on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const htmlEl = document.documentElement;
+  const darkModeBtn = document.getElementById("darkModeBtn");
+  const iconEl = darkModeBtn.querySelector("i");
+
+  // Set default theme to light if not set
+  if (!htmlEl.getAttribute("data-bs-theme")) {
+    htmlEl.setAttribute("data-bs-theme", "light");
+    iconEl.classList.remove("bi-moon");
+    iconEl.classList.add("bi-brightness-high");
+  } else if (htmlEl.getAttribute("data-bs-theme") === "dark") {
+    iconEl.classList.remove("bi-brightness-high");
+    iconEl.classList.add("bi-moon");
   } else {
-    event.currentTarget.innerHTML = `<i class="bi bi-brightness-high"></i>`;
+    iconEl.classList.remove("bi-moon");
+    iconEl.classList.add("bi-brightness-high");
   }
+
+  // Toggle theme and icon on button click
+  darkModeBtn.addEventListener("click", (event) => {
+    const isLight = htmlEl.getAttribute("data-bs-theme") === "light";
+    if (isLight) {
+      htmlEl.setAttribute("data-bs-theme", "dark");
+      iconEl.classList.remove("bi-brightness-high");
+      iconEl.classList.add("bi-moon");
+    } else {
+      htmlEl.setAttribute("data-bs-theme", "light");
+      iconEl.classList.remove("bi-moon");
+      iconEl.classList.add("bi-brightness-high");
+    }
+  });
 });
+
+// ...existing code...
