@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scale BI - Support</title>
+  <link rel="icon" type="image/x-icon" href="scalebi_logo.jpg">
+</head>
+
+<body><!-- Hidden checkbox for CSS-only toggle -->
+  <input type="checkbox" id="sidebarToggle" class="d-none" checked="false"/>
+  <!-- Toggle button -->
+  <label for="sidebarToggle" class="sidebar-toggle-label bg-info" title="Toggle sidebar">
+    <i class="bi bi-list"></i>
+  </label>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul class="list-unstyled m-0 px-3">
+      <li class="mb-3">
+        <a href="home.html" class="d-flex align-items-center text-decoration-none">
+          <i class="bi bi-house-door me-2"></i>
+          <span class="sidebar-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="mb-3">
+        <a href="#" class="d-flex align-items-center text-decoration-none">
+          <i class="bi bi-graph-up me-2"></i>
+          <span class="sidebar-title">Analytics</span>
+        </a>
+      </li>
+      <li class="mb-3">
+        <a href="#" class="d-flex align-items-center text-decoration-none">
+          <i class="bi bi-people me-2"></i>
+          <span class="sidebar-title">Users</span>
+        </a>
+      </li>
+      <li class="mb-3">
+        <a href="#" class="d-flex align-items-center text-decoration-none">
+          <i class="bi bi-gear me-2"></i>
+          <span class="sidebar-title">Settings</span>
+        </a>
+      </li>
+      <li>
+        <a href="support.html" class="d-flex align-items-center text-decoration-none">
+          <i class="bi bi-telephone-inbound-fill me-2"></i>
+          <span class="sidebar-title">Support</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+  <!-- Main content and navbar -->
+  <nav class="navbar navbar-expand-md mb-4 ms-5">
+    <div class="container-fluid">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="scalebi_logo.jpg" width="40" height="32" alt="ScaleBI logo">
+        <span class="fs-4">ScaleBI</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="me-auto mb-2 px-4 mb-md-0 w-75">
+          <form class="d-flex" role="search">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-magic"></i>
+              </span>
+              <input class="form-control" type="search" placeholder="Ask AI" aria-label="Search">
+            </div>
+          </form>
+        </div>
+        
+        <button id="darkModeBtn" class="btn px-4">
+          <i class="bi bi-moon"></i>
+        </button>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+            <div class="avatar-wrapper me-2">
+              <img src="https://i.pravatar.cc/40?img=12" alt="" width="40" height="40" class="rounded-circle">
+              <span class="status-dot"></span>
+            </div>
+            <div class="d-flex flex-column">
+              <span class="fw-medium">Sathish Kumar</span>
+              <small class="text-muted">Manager</small>
+            </div>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="/">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="main-content ms-5 px-4">
+
+    <!-- Tickets List -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Tickets</h5>
+          <div class="d-flex gap-2">
+            <div class="dropdown dropend">
+              <button class="btn btn-light btn-sm border w-100 text-start d-flex align-items-center" type="button" id="ticketFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="text-muted">Filters</span>
+                <i class="bi bi-chevron-down ms-auto"></i>
+              </button>
+              <div class="dropdown-menu p-3" style="min-width: 260px;">
+                <div class="mb-2 small text-muted">Created Time</div>
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="10:00-17:00" id="fTimeDay" data-filter-group="createdTime">
+                    <label class="form-check-label" for="fTimeDay">10:00-17:00</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="17:00-10:00" id="fTimeNight" data-filter-group="createdTime">
+                    <label class="form-check-label" for="fTimeNight">17:00-10:00</label>
+                  </div>
+                </div>
+                <div class="mb-2 small text-muted">Created By</div>
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="System" id="fCreatedBySystem" data-filter-group="createdBy">
+                    <label class="form-check-label" for="fCreatedBySystem">System</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Raju" id="fCreatedByRaju" data-filter-group="createdBy">
+                    <label class="form-check-label" for="fCreatedByRaju">Raju</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Alex" id="fCreatedByAlex" data-filter-group="createdBy">
+                    <label class="form-check-label" for="fCreatedByAlex">Alex</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Harvey" id="fCreatedByHarvey" data-filter-group="createdBy">
+                    <label class="form-check-label" for="fCreatedByHarvey">Harvey</label>
+                  </div>
+                </div>
+                <div class="mb-2 small text-muted">Ticket Status</div>
+                <div class="mb-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Open" id="fStatusOpen" data-filter-group="status">
+                    <label class="form-check-label" for="fStatusOpen">Open</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Closed" id="fStatusClosed" data-filter-group="status">
+                    <label class="form-check-label" for="fStatusClosed">Closed</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Pending" id="fStatusPending" data-filter-group="status">
+                    <label class="form-check-label" for="fStatusPending">Pending</label>
+                  </div>
+                </div>
+                <div class="d-grid">
+                  <button class="btn btn-primary btn-sm" id="applyFiltersBtn" type="button">Apply</button>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createTicketModal">
+              <i class="bi bi-plus-circle me-1"></i> Create Ticket
+            </button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Created Time <i class="bi bi-caret-down-fill"></i></th>
+                <th scope="col">Created by</th>
+                <th scope="col">Ticket Status</th>
+                <th scope="col">Last Update Time</th>
+                <th scope="col">Ticket Link</th>
+              </tr>
+            </thead>
+            <tbody id="ticketsTableBody"></tbody>
+          </table>
+        </div>
+        <nav>
+          <ul class="pagination pagination-sm mb-0" id="ticketsPagination"></ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Create Ticket Modal -->
+    <div class="modal fade" id="createTicketModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create Ticket</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="createTicketForm">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="ticketCreator" class="form-label">Created by</label>
+                <input type="text" class="form-control" id="ticketCreator" placeholder="Your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="ticketStatus" class="form-label">Status</label>
+                <select id="ticketStatus" class="form-select" required>
+                  <option value="Open" selected>Open</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Closed">Closed</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="ticketLink" class="form-label">Ticket Link</label>
+                <input type="text" class="form-control" id="ticketLink" placeholder="e.g. 4321 or URL">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script type="module" src="src/js/main.js"></script>
+</body>
+
+</html>
+
