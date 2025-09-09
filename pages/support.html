@@ -95,14 +95,11 @@
     </div>
   </nav>
   <div class="main-content ms-5 px-4">
-
-    <!-- Tickets List -->
-  <div class="card mb-4">
-  <div class="card-body">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h5 class="mb-0">Tickets</h5>
-      <div class="d-flex flex-row align-items-center gap-2">
-        <!-- Create Ticket Button -->
+  <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Tickets</a>
+    <form class="d-flex">
+      <!-- Create Ticket Button -->
         <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createTicketModal">
           <i class="bi bi-plus-circle me-1"></i> Create Ticket
         </button>
@@ -113,57 +110,57 @@
             <span class="text-muted">Filters</span>
             <i class="bi bi-chevron-down ms-auto"></i>
           </button>
-              <div class="dropdown-menu p-3" style="min-width: 260px;">
-                <div class="mb-2 small text-muted">Created Time</div>
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="10:00-17:00" id="fTimeDay" data-filter-group="createdTime">
-                    <label class="form-check-label" for="fTimeDay">10:00-17:00</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="17:00-10:00" id="fTimeNight" data-filter-group="createdTime">
-                    <label class="form-check-label" for="fTimeNight">17:00-10:00</label>
-                  </div>
+            <div class="dropdown-menu p-3" style="min-width: 260px;">
+              <div class="mb-2 small text-muted">Created Time</div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="10:00-17:00" id="fTimeDay" data-filter-group="createdTime">
+                  <label class="form-check-label" for="fTimeDay">10:00-17:00</label>
                 </div>
-                <div class="mb-2 small text-muted">Created By</div>
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="System" id="fCreatedBySystem" data-filter-group="createdBy">
-                    <label class="form-check-label" for="fCreatedBySystem">System</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Raju" id="fCreatedByRaju" data-filter-group="createdBy">
-                    <label class="form-check-label" for="fCreatedByRaju">Raju</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Alex" id="fCreatedByAlex" data-filter-group="createdBy">
-                    <label class="form-check-label" for="fCreatedByAlex">Alex</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Harvey" id="fCreatedByHarvey" data-filter-group="createdBy">
-                    <label class="form-check-label" for="fCreatedByHarvey">Harvey</label>
-                  </div>
-                </div>
-                <div class="mb-2 small text-muted">Ticket Status</div>
-                <div class="mb-2">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Open" id="fStatusOpen" data-filter-group="status">
-                    <label class="form-check-label" for="fStatusOpen">Open</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Closed" id="fStatusClosed" data-filter-group="status">
-                    <label class="form-check-label" for="fStatusClosed">Closed</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Pending" id="fStatusPending" data-filter-group="status">
-                    <label class="form-check-label" for="fStatusPending">Pending</label>
-                  </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="17:00-10:00" id="fTimeNight" data-filter-group="createdTime">
+                  <label class="form-check-label" for="fTimeNight">17:00-10:00</label>
                 </div>
               </div>
-            </div>
-          </div>
+              <div class="mb-2 small text-muted">Created By</div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="System" id="fCreatedBySystem" data-filter-group="createdBy">
+                  <label class="form-check-label" for="fCreatedBySystem">System</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Raju" id="fCreatedByRaju" data-filter-group="createdBy">
+                  <label class="form-check-label" for="fCreatedByRaju">Raju</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Alex" id="fCreatedByAlex" data-filter-group="createdBy">
+                  <label class="form-check-label" for="fCreatedByAlex">Alex</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Harvey" id="fCreatedByHarvey" data-filter-group="createdBy">
+                  <label class="form-check-label" for="fCreatedByHarvey">Harvey</label>
+                </div>
+              </div>
+              <div class="mb-2 small text-muted">Ticket Status</div>
+              <div class="mb-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Open" id="fStatusOpen" data-filter-group="status">
+                  <label class="form-check-label" for="fStatusOpen">Open</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Closed" id="fStatusClosed" data-filter-group="status">
+                  <label class="form-check-label" for="fStatusClosed">Closed</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Pending" id="fStatusPending" data-filter-group="status">
+                  <label class="form-check-label" for="fStatusPending">Pending</label>
+                </div>
+              </div>
         </div>
-        <div class="table-responsive">
+    </form>
+  </div>
+</nav>  
+
    <table class="table align-middle border rounded overflow-hidden">
     <thead>
       <tr>
@@ -233,7 +230,8 @@
       </tr>
      </tbody>
   </table>
-</div>
+
+   
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-end">
     <li class="page-item disabled">
@@ -247,14 +245,6 @@
     </li>
   </ul>
 </nav>
-
-</nav>
-    
-          </div>
-         
-        </div>
-      </div>
-    </div>
 
   </div>
   <script type="module" src="../src/js/main.js"></script>
