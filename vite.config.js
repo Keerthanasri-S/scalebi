@@ -1,5 +1,19 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { readdirSync } from 'fs'
+
+function getHtmlInputs(dir) {
+  const files = readdirSync(dir, { withFileTypes: true })
+  const inputs = {}
+
+  for (const file of files) {
+    if (file.isFile() && file.name.endsWith('.html')) {
+      const name = file.name.replace('.html', '')
+      inputs[name] = resolve(dir, file.name)
+    }
+  }
+  return inputs
+}
 
 export default defineConfig(({ mode }) => {
   return {
@@ -7,11 +21,9 @@ export default defineConfig(({ mode }) => {
     build: {
       rollupOptions: {
         input: {
-          main: resolve(__dirname, 'index.html'),
-          support: resolve(__dirname, 'support.html'),
-          home: resolve(__dirname, 'home.html'),
-        },
-      },
-    },
+          ...getHtmlInputs(resolve(__dirname, './'))
+        }
+      }
+    }
   }
 })
