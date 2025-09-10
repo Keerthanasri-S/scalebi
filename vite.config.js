@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import { resolve, basename } from 'path'
 import { readdirSync } from 'fs'
+
+const projectName = basename(__dirname)   // ✅ root project folder name
 
 function getHtmlInputs(dir) {
   const files = readdirSync(dir, { withFileTypes: true })
@@ -17,7 +19,7 @@ function getHtmlInputs(dir) {
 
 export default defineConfig(({ mode }) => {
   return {
-    base: mode === 'production' ? '/scalebi/' : '/',  // ✅ dynamic base
+    base: mode === 'production' ? `/${projectName}/` : '/',  // ✅ auto project folder
     build: {
       rollupOptions: {
         input: {
